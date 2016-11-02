@@ -13,14 +13,20 @@ import java.lang.instrument.Instrumentation;
  * The strategy for regular classes adds a static field to hold the probe array
  * and a static initialization method requesting the probe array from the
  * runtime.
- *
+ * <p>
  * Add a method call to this static methon after each bytecode statement call.
  * TODO the problem is: what's the parameters of the static method?
  */
 public class Agent {
-    public static void premain(String agentArgs, Instrumentation inst){
+    public static void premain(String agentArgs, Instrumentation inst) {
         CoverageDriver transformer = new CoverageDriver(agentArgs);
         inst.addTransformer(transformer);
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public void run() {
+                CoverageDriver.printResult();
+            }
+        });
     }
 
     public static void main(String[] args) {

@@ -13,23 +13,13 @@ import java.nio.file.StandardOpenOption;
  */
 public class ASMified {
 
-    private static void collect(String className, String methodName, String desc, int line){
-        Path path = Paths.get("raw_result");
-        try (PrintWriter out = new PrintWriter(Files.newBufferedWriter
-                (path, StandardOpenOption.CREATE, StandardOpenOption.APPEND)))
-        {
-            out.println(className+" "+methodName+" "+desc+": "+line+" has been visited.");
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("file error");
-        }
-    }
-    public int add(int a, int b){
-        int c = a + b;collect("a", "b", "c", 1);
-        return c;
-    }
 
     public void m(){
-        collect("a", "b", "c", 99999999);
+
+        CoverageDriver.collect("a", "b", "c", 9999);
     }
+
+//    public static void main(String[] args) {
+//        collect("a", "b", "c", 1);
+//    }
 }

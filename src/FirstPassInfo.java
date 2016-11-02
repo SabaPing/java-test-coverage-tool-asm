@@ -36,7 +36,7 @@ class FirstPassInfo {
     }
 
     //for each method in class, we have a set to store line number in the set.
-    private final Map<MethodsInfo, SortedSet<Integer>> map;
+    final Map<MethodsInfo, SortedSet<Integer>> map;
     private final String className;
 
     public FirstPassInfo(String cName) {
