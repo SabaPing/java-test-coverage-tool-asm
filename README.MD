@@ -5,7 +5,7 @@ Use	ASM	byte-code	manipulation framework to	build	an	automated coverage	collecti
 * use Java Agent to perform	on-the-fly	code	instrumentation.
 
 
-[Java	Agent](https://docs.oracle.com/javase/6/docs/api/java/lang/instrument/packagesummary.html)
+[Java	Agent](https://docs.oracle.com/javase/8/docs/api/java/lang/instrument/package-summary.html)
 
 
 ### Build
