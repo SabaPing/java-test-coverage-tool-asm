@@ -15,6 +15,7 @@ Import project to Intellij Idea, then build artifact. The name of output artifac
 
 ### Usage
 Copy agent.jar to anywhere you want.
+Choose a project you want to analyze. This project must use Junit framework.
 Before run Junit test, add VM arguement "-javaagent:<path to agent.jar>=<your project name>", then run test.
 The result will show in "System.out".
 
