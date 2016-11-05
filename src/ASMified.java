@@ -17,6 +17,9 @@ public class ASMified {
     public void m(){
 
         CoverageDriver.collect("a", "b", "c", 9999);
+
+
+
     }
 
 //    public static void main(String[] args) {

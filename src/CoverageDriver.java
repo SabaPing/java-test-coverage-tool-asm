@@ -33,6 +33,7 @@ public class CoverageDriver implements ClassFileTransformer {
                 System.out.println("method: " + entry1.getKey());
                 System.out.println("all statements: " + entry1.getValue());
                 System.out.println("coveraged statements: " + entry.getValue().scnd.map.get(entry1.getKey()));
+                System.out.println("--------------------------------------------");
             }
             System.out.println();
         }
