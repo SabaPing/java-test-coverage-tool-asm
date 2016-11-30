@@ -35,12 +35,9 @@ public class CoverageAdapter extends ClassVisitor implements Opcodes {
             mv.visitLdcInsn(methodDesc);
             mv.visitIntInsn(SIPUSH, line);
             mv.visitMethodInsn(INVOKESTATIC, "CoverageDriver", "collect", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V", false);
+//            mv.visitMaxs(0,0);
+//            mv.visitEnd();
             super.visitLineNumber(line, start);
-        }
-
-        @Override
-        public void visitMaxs(int maxStack, int maxLocals) {
-            super.visitMaxs(maxStack + 4, maxLocals);
         }
     }
 }

@@ -79,7 +79,7 @@ public class CoverageDriver implements ClassFileTransformer {
     private byte[] passTwo(byte[] classByte, String name) {
         byte[] ret;
         ClassReader cr = new ClassReader(classByte);
-        ClassWriter cw = new ClassWriter(cr, 0);
+        ClassWriter cw = new ClassWriter(cr, ClassWriter.COMPUTE_FRAMES);
         CoverageAdapter ca = new CoverageAdapter(cw, name);
         cr.accept(ca, 0);
         ret = cw.toByteArray();
